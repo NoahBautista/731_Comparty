@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/ic_build"
+            android:title="@string/menu_gallery" />
+
+<!--        <item-->
+<!--            android:id="@+id/nav_cpu"-->
+<!--            android:icon="@drawable/ic_cpu"-->
+<!--            android:title="Processors">-->
+<!--        </item>-->
+
+<!--        <item-->
+<!--            android:id="@+id/nav_test"-->
+<!--            android:icon="@drawable/ic_gpu"-->
+<!--            android:title="Graphics Cards" />-->
+
+<!--        <item-->
+<!--            android:id="@+id/nav_ram"-->
+<!--            android:icon="@drawable/ic_ram"-->
+<!--            android:title="RAM">-->
+<!--        </item>-->
+
+<!--        <item-->
+<!--            android:id="@+id/nav_motherboard"-->
+<!--            android:icon="@drawable/ic_comp"-->
+<!--            android:title="Motherboards">-->
+<!--        </item>-->
+
+<!--        <item-->
+<!--            android:id="@+id/nav_cases"-->
+<!--            android:icon="@drawable/ic_case"-->
+<!--            android:title="Cases">-->
+<!--        </item>-->
+
+<!--        <item-->
+<!--            android:id="@+id/nav_powerSupply"-->
+<!--            android:icon="@drawable/ic_power"-->
+<!--            android:title="Power Supply">-->
+<!--        </item>-->
+    </group>
+</menu>

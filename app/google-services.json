@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "195042924855",
+    "firebase_url": "https://comparty731.firebaseio.com",
+    "project_id": "comparty731",
+    "storage_bucket": "comparty731.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:195042924855:android:7a003fef25b3650fa322b2",
+        "android_client_info": {
+          "package_name": "com.example.compartyapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "195042924855-gar6qb7v9pcl71ajk16lpci43ojuv20c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAomx-svBZlzlVEP_ukvtk5HuCaa2mGtrU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "195042924855-gar6qb7v9pcl71ajk16lpci43ojuv20c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

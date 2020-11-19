@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#373737"
+    android:orientation="vertical"
+    android:id="@+id/home"
+    tools:context=".ui.home.HomeFragment">
+
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="60dp">
+
+        <Button
+            android:id="@+id/btn_cpu"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:text="@string/cpu"
+            app:backgroundTint="#9932CC"
+            app:strokeColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btn_gpu"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="@string/gpu"
+            app:backgroundTint="#9932CC" />
+    </TableRow>
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+        <Button
+            android:id="@+id/btn_ram"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:text="@string/ram"
+            app:backgroundTint="#9932CC" />
+
+        <Button
+            android:id="@+id/btn_mobo"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="@string/motherboard"
+            app:backgroundTint="#9932CC" />
+    </TableRow>
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+        <Button
+            android:id="@+id/btn_case"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:text="@string/cases"
+            app:backgroundTint="#9932CC" />
+
+        <Button
+            android:id="@+id/btn_power"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="@string/power_supply"
+            app:backgroundTint="#9932CC" />
+    </TableRow>
+</LinearLayout>
