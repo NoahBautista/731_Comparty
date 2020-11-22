@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".AddCPU">
+
+
+    <EditText
+        android:id="@+id/edit_text_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Name">
+    </EditText>
+
+    <EditText
+        android:id="@+id/edit_text_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Description">
+    </EditText>
+
+    <EditText
+        android:id="@+id/edit_text_manufacturer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Manufacturer"
+        android:maxLines="1"
+        android:inputType="text">
+    </EditText>
+
+    <EditText
+        android:id="@+id/edit_text_link"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Link">
+    </EditText>
+
+
+    <EditText
+        android:id="@+id/editTextPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Price"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/edit_text_productType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Type in cpu"
+        android:maxLines="1"
+        android:inputType="text">
+    </EditText>
+
+    <EditText
+        android:id="@+id/editNumberOfCores"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="# of Cores"
+        android:inputType="number"/>
+
+    <EditText
+        android:id="@+id/editNumberOfThreads"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="# of Threads"
+        android:inputType="number"/>
+
+    <EditText
+        android:id="@+id/edit_text_baseClock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Base Clock of CPU"
+        android:maxLines="1"
+        android:inputType="text">
+    </EditText>
+
+    <EditText
+        android:id="@+id/edit_text_boostClock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Boost Clock of CPU"
+        android:maxLines="1"
+        android:inputType="text">
+    </EditText>
+
+</LinearLayout>

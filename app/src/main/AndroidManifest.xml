@@ -10,6 +10,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CompartyApp" >
+        <activity android:name=".CPUWebView" />
+        <activity
+            android:name=".AddCPU"
+            android:parentActivityName=".CPUView"/>
+        <activity
+            android:name=".ViewCPU"
+            android:parentActivityName=".CPUView" />
+        <activity
+            android:name=".CPUView"
+            android:launchMode="singleTop" />
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"

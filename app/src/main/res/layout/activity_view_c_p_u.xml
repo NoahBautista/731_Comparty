@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ViewCPU">
+
+   <RelativeLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:padding="8dp">
+   <ImageView
+      android:layout_width="match_parent"
+      android:layout_height="200dp"
+      android:id="@+id/cpuImage">
+   </ImageView>
+
+      <TextView
+          android:id="@+id/cpuDescription"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="Description:"
+          android:layout_below="@+id/cpuImage"
+          android:textAppearance="@style/TextAppearance.AppCompat.Large"></TextView>
+      <TextView
+          android:id="@+id/textDescription"
+          android:maxLines="5"
+          android:layout_marginLeft="10dp"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_below="@+id/cpuDescription"
+          android:text="Description"></TextView>
+
+      <TextView
+          android:layout_marginTop="100dp"
+          android:id="@+id/cpuNumberOfCores"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="# Of Cores:"
+          android:layout_below="@+id/cpuDescription"
+          android:textAppearance="@style/TextAppearance.AppCompat.Large"></TextView>
+      <TextView
+          android:layout_marginTop="100dp"
+          android:id="@+id/textNumberOfCores"
+          android:layout_marginLeft="10dp"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_toRightOf="@id/cpuNumberOfCores"
+          android:layout_below="@+id/cpuDescription"
+          android:text="numberOfcores"
+          android:textAppearance="@style/TextAppearance.AppCompat.Large"></TextView>
+
+      <TextView
+          android:layout_marginTop="20dp"
+          android:id="@+id/cpuNumberOfThreads"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="# Of Threads:"
+          android:layout_below="@+id/cpuNumberOfCores"
+          android:textAppearance="@style/TextAppearance.AppCompat.Large"></TextView>
+      <TextView
+          android:layout_marginTop="20dp"
+          android:id="@+id/textNumberOfThreads"
+          android:layout_marginLeft="10dp"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_toRightOf="@id/cpuNumberOfThreads"
+          android:layout_below="@+id/cpuNumberOfCores"
+          android:text="numberOfthreads"
+          android:textAppearance="@style/TextAppearance.AppCompat.Large"></TextView>
+
+      <TextView
+          android:layout_marginTop="20dp"
+          android:id="@+id/cpuBaseClock"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="Base Clock:"
+          android:layout_below="@+id/cpuNumberOfThreads"
+          android:textAppearance="@style/TextAppearance.AppCompat.Large"></TextView>
+      <TextView
+          android:layout_marginTop="20dp"
+          android:id="@+id/textBaseClock"
+          android:layout_marginLeft="10dp"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_toRightOf="@id/cpuBaseClock"
+          android:layout_below="@+id/cpuNumberOfThreads"
+          android:text="base clock"
+          android:textAppearance="@style/TextAppearance.AppCompat.Large"></TextView>
+
+      <TextView
+          android:layout_marginTop="20dp"
+          android:id="@+id/cpuBoostClock"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="Boost Clock:"
+          android:layout_below="@+id/cpuBaseClock"
+          android:textAppearance="@style/TextAppearance.AppCompat.Large"></TextView>
+      <TextView
+          android:layout_marginTop="20dp"
+          android:id="@+id/textBoostClock"
+          android:layout_marginLeft="10dp"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_toRightOf="@id/cpuBaseClock"
+          android:layout_below="@+id/cpuBaseClock"
+          android:text="base clock"
+          android:textAppearance="@style/TextAppearance.AppCompat.Large"></TextView>
+
+      <Button
+          android:id="@+id/cpuWebview"
+          android:layout_width="200dp"
+          android:layout_height="70dp"
+          android:text="View Link of CPU"
+          android:layout_below="@+id/cpuBoostClock"
+          android:layout_marginTop="20dp">
+      </Button>
+
+      <TextView
+          android:id="@+id/textLink"
+          android:layout_marginLeft="10dp"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:visibility="invisible">
+      </TextView>
+
+
+   </RelativeLayout>
+
+</LinearLayout>
