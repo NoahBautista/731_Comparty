@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ViewPowerSupply">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:id="@+id/powerSupplyImage">
+        </ImageView>
+
+        <TextView
+            android:id="@+id/powerSupplyDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Description:"
+            android:layout_below="@+id/powerSupplyImage"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"></TextView>
+        <TextView
+            android:id="@+id/textDescriptionPowerSupply"
+            android:maxLines="5"
+            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/powerSupplyDescription"
+            android:text="Description"></TextView>
+
+        <TextView
+            android:layout_marginTop="100dp"
+            android:id="@+id/powerSupplyType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Type of Power Supply:"
+            android:layout_below="@+id/powerSupplyDescription"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"></TextView>
+        <TextView
+            android:layout_marginTop="100dp"
+            android:id="@+id/textPType"
+            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/powerSupplyType"
+            android:layout_below="@+id/powerSupplyDescription"
+            android:text="ptype"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"></TextView>
+
+        <TextView
+            android:layout_marginTop="20dp"
+            android:id="@+id/powerSupplyCapacity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Capacity:"
+            android:layout_below="@+id/powerSupplyType"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"></TextView>
+        <TextView
+            android:layout_marginTop="20dp"
+            android:id="@+id/textPCapacity"
+            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/powerSupplyCapacity"
+            android:layout_below="@+id/powerSupplyType"
+            android:text="capacity"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"></TextView>
+
+        <TextView
+            android:layout_marginTop="20dp"
+            android:id="@+id/powerSupplyRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rating of Power Supply:"
+            android:layout_below="@+id/powerSupplyCapacity"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"></TextView>
+        <TextView
+            android:layout_marginTop="20dp"
+            android:id="@+id/textRating"
+            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/powerSupplyRating"
+            android:layout_below="@+id/powerSupplyCapacity"
+            android:text="rating"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"></TextView>
+
+        <Button
+            android:id="@+id/powerSupplyWebview"
+            android:layout_width="200dp"
+            android:layout_height="70dp"
+            android:text="View Link of Power Supply"
+            android:layout_below="@+id/powerSupplyRating"
+            android:layout_marginTop="20dp">
+        </Button>
+
+        <TextView
+            android:id="@+id/textLinkPowerSupply"
+            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="invisible">
+        </TextView>
+
+    </RelativeLayout>
+
+</LinearLayout>

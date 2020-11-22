@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ViewRAM">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:id="@+id/ramImage">
+        </ImageView>
+
+        <TextView
+            android:id="@+id/ramDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Description:"
+            android:layout_below="@+id/ramImage"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"></TextView>
+        <TextView
+            android:id="@+id/textDescriptionRAM"
+            android:maxLines="5"
+            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ramDescription"
+            android:text="Description"></TextView>
+
+        <TextView
+            android:layout_marginTop="100dp"
+            android:id="@+id/ramFrequency"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Frequency:"
+            android:layout_below="@+id/ramDescription"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"></TextView>
+        <TextView
+            android:layout_marginTop="100dp"
+            android:id="@+id/textFrequency"
+            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/ramFrequency"
+            android:layout_below="@+id/ramDescription"
+            android:text="frequency"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"></TextView>
+
+        <TextView
+            android:layout_marginTop="20dp"
+            android:id="@+id/ramMemoryType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Memory Type:"
+            android:layout_below="@+id/ramFrequency"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"></TextView>
+        <TextView
+            android:layout_marginTop="20dp"
+            android:id="@+id/textMemoryType"
+            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/ramMemoryType"
+            android:layout_below="@+id/ramFrequency"
+            android:text="memoryType"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"></TextView>
+
+        <TextView
+            android:layout_marginTop="20dp"
+            android:id="@+id/ramCapacity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RAM Capacity:"
+            android:layout_below="@+id/ramMemoryType"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"></TextView>
+        <TextView
+            android:layout_marginTop="20dp"
+            android:id="@+id/textMCapacity"
+            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/ramCapacity"
+            android:layout_below="@+id/ramMemoryType"
+            android:text="ram capacity"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"></TextView>
+
+        <TextView
+            android:layout_marginTop="20dp"
+            android:id="@+id/ramNumberOfSticks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="# of RAM Sticks:"
+            android:layout_below="@+id/ramCapacity"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"></TextView>
+        <TextView
+            android:layout_marginTop="20dp"
+            android:id="@+id/textRamSticks"
+            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/ramNumberOfSticks"
+            android:layout_below="@+id/ramCapacity"
+            android:text="numberOfRamSticks"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"></TextView>
+
+        <Button
+            android:id="@+id/ramWebview"
+            android:layout_width="200dp"
+            android:layout_height="70dp"
+            android:text="View Link of RAM"
+            android:layout_below="@+id/ramNumberOfSticks"
+            android:layout_marginTop="20dp">
+        </Button>
+
+        <TextView
+            android:id="@+id/textLinkRAM"
+            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="invisible">
+        </TextView>
+
+    </RelativeLayout>
+
+</LinearLayout>

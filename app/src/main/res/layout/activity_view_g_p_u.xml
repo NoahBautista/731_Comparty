@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ViewGPU">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:id="@+id/gpuImage">
+        </ImageView>
+
+        <TextView
+            android:id="@+id/gpuDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Description:"
+            android:layout_below="@+id/gpuImage"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"></TextView>
+        <TextView
+            android:id="@+id/textDescriptionGPU"
+            android:maxLines="5"
+            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/gpuDescription"
+            android:text="Description"></TextView>
+
+        <TextView
+            android:layout_marginTop="90dp"
+            android:id="@+id/gpuCores"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cores:"
+            android:layout_below="@+id/gpuDescription"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"></TextView>
+        <TextView
+            android:layout_marginTop="90dp"
+            android:id="@+id/textCores"
+            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/gpuCores"
+            android:layout_below="@+id/gpuDescription"
+            android:text="cores"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"></TextView>
+
+        <TextView
+            android:layout_marginTop="15dp"
+            android:id="@+id/gpuVRAM"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="VRAM:"
+            android:layout_below="@+id/gpuCores"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"></TextView>
+        <TextView
+            android:layout_marginTop="15dp"
+            android:id="@+id/textVRAM"
+            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/gpuCores"
+            android:layout_below="@+id/gpuCores"
+            android:text="vram"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"></TextView>
+
+        <TextView
+            android:layout_marginTop="15dp"
+            android:id="@+id/gpuBaseClock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="GPU Base Clock:"
+            android:layout_below="@+id/gpuVRAM"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"></TextView>
+        <TextView
+            android:layout_marginTop="15dp"
+            android:id="@+id/textGPUBaseClock"
+            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/gpuBaseClock"
+            android:layout_below="@+id/gpuVRAM"
+            android:text="gpu base clock"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"></TextView>
+
+        <TextView
+            android:layout_marginTop="15dp"
+            android:id="@+id/gpuBoostClock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="GPU Boost Clock:"
+            android:layout_below="@+id/gpuBaseClock"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"></TextView>
+        <TextView
+            android:layout_marginTop="15dp"
+            android:id="@+id/textGPUBoostClock"
+            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/gpuBaseClock"
+            android:layout_below="@+id/gpuBaseClock"
+            android:text="gpu base clock"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"></TextView>
+
+        <TextView
+            android:layout_marginTop="15dp"
+            android:id="@+id/gpuPCIEVersion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PCIE Version:"
+            android:layout_below="@+id/gpuBoostClock"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"></TextView>
+        <TextView
+            android:layout_marginTop="15dp"
+            android:id="@+id/textPCIEVersion"
+            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/gpuBoostClock"
+            android:layout_below="@+id/gpuBoostClock"
+            android:text="pcie version"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"></TextView>
+
+        <Button
+            android:id="@+id/gpuWebview"
+            android:layout_width="200dp"
+            android:layout_height="70dp"
+            android:text="View Link of GPU"
+            android:layout_below="@+id/gpuPCIEVersion"
+            android:layout_marginTop="15dp">
+        </Button>
+
+        <TextView
+            android:id="@+id/textLinkGPU"
+            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="invisible">
+        </TextView>
+
+    </RelativeLayout>
+
+</LinearLayout>

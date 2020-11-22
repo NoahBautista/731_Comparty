@@ -10,13 +10,62 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CompartyApp" >
+        <activity android:name=".CasesWebView"></activity>
+        <activity android:name=".ViewCases"
+            android:parentActivityName=".CasesView"/>
+        <activity android:name=".PowerSupplyWebView" />
+        <activity
+            android:name=".ViewPowerSupply"
+            android:parentActivityName=".PowerSupplyView" />
+        <activity android:name=".MotherboardWebView" />
+        <activity
+            android:name=".ViewMotherboard"
+            android:parentActivityName=".MotherboardView" />
+        <activity android:name=".RAMWebView" />
+        <activity
+            android:name=".ViewRAM"
+            android:parentActivityName=".RamView" />
+        <activity android:name=".GPUWebView" />
         <activity android:name=".CPUWebView" />
         <activity
-            android:name=".AddCPU"
-            android:parentActivityName=".CPUView"/>
+            android:name=".ViewGPU"
+            android:parentActivityName=".GPUView" />
         <activity
             android:name=".ViewCPU"
             android:parentActivityName=".CPUView" />
+        <activity
+            android:name=".AddPowerSupply"
+            android:parentActivityName=".PowerSupplyView" />
+        <activity
+            android:name=".AddCases"
+            android:parentActivityName=".CasesView" />
+        <activity
+            android:name=".AddMotherboard"
+            android:parentActivityName=".MotherboardView" />
+        <activity
+            android:name=".AddRAM"
+            android:parentActivityName=".RamView" />
+        <activity
+            android:name=".AddGPU"
+            android:parentActivityName=".GPUView" />
+        <activity
+            android:name=".AddCPU"
+            android:parentActivityName=".CPUView" />
+        <activity
+            android:name=".PowerSupplyView"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".CasesView"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".MotherboardView"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".RamView"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".GPUView"
+            android:launchMode="singleTop" />
         <activity
             android:name=".CPUView"
             android:launchMode="singleTop" />

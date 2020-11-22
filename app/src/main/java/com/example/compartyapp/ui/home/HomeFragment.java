@@ -14,7 +14,12 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.compartyapp.CPUView;
+import com.example.compartyapp.CasesView;
+import com.example.compartyapp.GPUView;
+import com.example.compartyapp.MotherboardView;
+import com.example.compartyapp.PowerSupplyView;
 import com.example.compartyapp.R;
+import com.example.compartyapp.RamView;
 import com.example.compartyapp.ui.slideshow.SlideshowFragment;
 import com.example.compartyapp.ui.slideshow.SlideshowViewModel;
 
@@ -45,44 +50,44 @@ public class HomeFragment extends Fragment {
             }
         });
 
-//        Button graphics_card  = root.findViewById(R.id.btn_gpu);
-//        graphics_card .setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(getActivity(), GraphicsCard.class);
-//                view.getContext().startActivity(intent);}
-//        });
-//
-//        Button ram = root.findViewById(R.id.btn_ram);
-//        ram.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(getActivity(), RAM.class);
-//                view.getContext().startActivity(intent);}
-//        });
-//
-//        Button motherboard = root.findViewById(R.id.btn_mobo);
-//        motherboard.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(getActivity(), Motherboard.class);
-//                view.getContext().startActivity(intent);}
-//        });
-//
-//        Button cases = root.findViewById(R.id.btn_case);
-//        cases.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(getActivity(), Cases.class);
-//                view.getContext().startActivity(intent);}
-//        });
-//        Button powerSupply = root.findViewById(R.id.btn_power);
-//        powerSupply.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(getActivity(), PowerSupply.class);
-//                view.getContext().startActivity(intent);}
-//        });
+        Button graphics_card  = root.findViewById(R.id.btn_gpu);
+        graphics_card .setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), GPUView.class);
+                view.getContext().startActivity(intent);}
+        });
+
+        Button ram = root.findViewById(R.id.btn_ram);
+        ram.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), RamView.class);
+                view.getContext().startActivity(intent);}
+        });
+
+        Button motherboard = root.findViewById(R.id.btn_mobo);
+        motherboard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), MotherboardView.class);
+                view.getContext().startActivity(intent);}
+        });
+
+        Button cases = root.findViewById(R.id.btn_case);
+        cases.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), CasesView.class);
+                view.getContext().startActivity(intent);}
+        });
+        Button powerSupply = root.findViewById(R.id.btn_power);
+        powerSupply.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), PowerSupplyView.class);
+                view.getContext().startActivity(intent);}
+        });
 
 
         return root;

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ViewCases">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:id="@+id/casesImage">
+        </ImageView>
+
+        <TextView
+            android:id="@+id/casesDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Description:"
+            android:layout_below="@+id/casesImage"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"></TextView>
+        <TextView
+            android:id="@+id/textDescriptionCases"
+            android:maxLines="5"
+            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/casesDescription"
+            android:text="Description"></TextView>
+
+        <TextView
+            android:layout_marginTop="100dp"
+            android:id="@+id/casesSizeSupport"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Size Support:"
+            android:layout_below="@+id/casesDescription"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"></TextView>
+        <TextView
+            android:layout_marginTop="100dp"
+            android:id="@+id/textSizeSupport"
+            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/casesSizeSupport"
+            android:layout_below="@+id/casesDescription"
+            android:text="size supported"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"></TextView>
+
+        <Button
+            android:id="@+id/casesWebview"
+            android:layout_width="200dp"
+            android:layout_height="70dp"
+            android:text="View Link of Case"
+            android:layout_below="@+id/casesSizeSupport"
+            android:layout_marginTop="20dp">
+        </Button>
+
+        <TextView
+            android:id="@+id/textLinkCases"
+            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="invisible">
+        </TextView>
+
+    </RelativeLayout>
+
+</LinearLayout>

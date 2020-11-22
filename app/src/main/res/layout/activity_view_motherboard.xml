@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ViewMotherboard">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:id="@+id/motherboardImage">
+        </ImageView>
+
+        <TextView
+            android:id="@+id/motherboardDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Description:"
+            android:layout_below="@+id/motherboardImage"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"></TextView>
+        <TextView
+            android:id="@+id/textDescriptionMotherboard"
+            android:maxLines="5"
+            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/motherboardDescription"
+            android:text="Description"></TextView>
+
+        <TextView
+            android:layout_marginTop="100dp"
+            android:id="@+id/motherboardSize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Size:"
+            android:layout_below="@+id/motherboardDescription"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"></TextView>
+        <TextView
+            android:layout_marginTop="100dp"
+            android:id="@+id/textSize"
+            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/motherboardSize"
+            android:layout_below="@+id/motherboardDescription"
+            android:text="size"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"></TextView>
+
+        <TextView
+            android:layout_marginTop="20dp"
+            android:id="@+id/motherboardSocket"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Socket:"
+            android:layout_below="@+id/motherboardSize"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"></TextView>
+        <TextView
+            android:layout_marginTop="20dp"
+            android:id="@+id/textSocket"
+            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/motherboardSocket"
+            android:layout_below="@+id/motherboardSize"
+            android:text="size"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"></TextView>
+
+        <TextView
+            android:layout_marginTop="20dp"
+            android:id="@+id/motherboardRamSupp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ram Supported:"
+            android:layout_below="@+id/motherboardSocket"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"></TextView>
+        <TextView
+            android:layout_marginTop="20dp"
+            android:id="@+id/textMotherboardRamSupp"
+            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/motherboardRamSupp"
+            android:layout_below="@+id/motherboardSocket"
+            android:text="ram supported"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"></TextView>
+
+        <TextView
+            android:layout_marginTop="20dp"
+            android:id="@+id/motherboardPCIESupp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PCIE Supported:"
+            android:layout_below="@+id/motherboardRamSupp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"></TextView>
+        <TextView
+            android:layout_marginTop="20dp"
+            android:id="@+id/textPCIESupp"
+            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/motherboardPCIESupp"
+            android:layout_below="@+id/motherboardRamSupp"
+            android:text="numberOfRamSticks"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"></TextView>
+
+        <Button
+            android:id="@+id/motherboardWebview"
+            android:layout_width="200dp"
+            android:layout_height="70dp"
+            android:text="View Link of Motherboard"
+            android:layout_below="@+id/motherboardPCIESupp"
+            android:layout_marginTop="20dp">
+        </Button>
+
+        <TextView
+            android:id="@+id/textLinkMotherboard"
+            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="invisible">
+        </TextView>
+
+    </RelativeLayout>
+
+</LinearLayout>

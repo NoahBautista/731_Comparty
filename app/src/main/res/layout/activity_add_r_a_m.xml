@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".AddRAM">
+
+    <EditText
+        android:id="@+id/edit_text_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Name">
+    </EditText>
+
+    <EditText
+        android:id="@+id/edit_text_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Description">
+    </EditText>
+
+    <EditText
+        android:id="@+id/edit_text_manufacturer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Manufacturer">
+    </EditText>
+
+    <EditText
+        android:id="@+id/edit_text_link"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Link">
+    </EditText>
+
+
+    <EditText
+        android:id="@+id/editTextPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Price"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/edit_text_productType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Type in ram">
+    </EditText>
+
+    <EditText
+        android:id="@+id/edit_text_frequency"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Frequency/Speed">
+    </EditText>
+
+    <EditText
+        android:id="@+id/edit_text_memoryType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Type Of Memory">
+    </EditText>
+
+    <EditText
+        android:id="@+id/edit_text_capacity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Capacity">
+    </EditText>
+
+    <EditText
+        android:id="@+id/editSticks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="# of RAM Sticks"
+        android:inputType="number"/>
+
+</LinearLayout>
