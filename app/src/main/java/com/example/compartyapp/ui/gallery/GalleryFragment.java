@@ -56,7 +56,7 @@ public class GalleryFragment extends Fragment {
 
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private CollectionReference componentRef = db.collection("Component");
-    private DocumentReference noteRef = db.document("Component/Default");
+    private DocumentReference noteRef;
     private ListenerRegistration componentListner;
 
 
@@ -65,7 +65,7 @@ public class GalleryFragment extends Fragment {
         galleryViewModel =
                 new ViewModelProvider(this).get(GalleryViewModel.class);
         View root = inflater.inflate(R.layout.fragment_gallery, container, false);
-
+        noteRef = db.document("Component/Default");
         editTextTitle = root.findViewById(R.id.edit_text_title);
         editTextDescription = root.findViewById(R.id.edit_text_description);
         editTextManufacturer = root.findViewById(R.id.edit_text_manufacturer);
@@ -77,8 +77,8 @@ public class GalleryFragment extends Fragment {
         Button b1 = (Button) root.findViewById(R.id.button_save);
         b1.setOnClickListener(buttonSave);
 
-        //Button b2 = (Button) root.findViewById(R.id.button_load);
-        // b2.setOnClickListener(buttonLoad);
+        Button b2 = (Button) root.findViewById(R.id.button_load);
+        b2.setOnClickListener(buttonLoad);
 
         Button b3 = (Button) root.findViewById(R.id.button_update);
         b3.setOnClickListener(buttonUpdate);
@@ -174,34 +174,44 @@ public class GalleryFragment extends Fragment {
     };
 
     private void deleteNote(View v) {
-        noteRef.delete();
+        if(editTextTitle.getText().toString() != null){
+            noteRef = db.document("Component/"+editTextTitle.getText().toString());
+            noteRef.delete();
+        }
     }
 
     public void updateNote(View v) {
-        String description = editTextDescription.getText().toString();
-        // Map<String, Object> note = new HashMap<>();
-        // note.put(KEY_DESC, description);
-        noteRef.update(KEY_DESC, description);
-        loadNote(v);
+        if(editTextTitle.getText().toString() != null){
+            noteRef = db.document("Component/"+editTextTitle.getText().toString());
+            String description = editTextDescription.getText().toString();
+            // Map<String, Object> note = new HashMap<>();
+            // note.put(KEY_DESC, description);
+            //noteRef = db.document("Component/"+KEY_TITLE);
+            noteRef.update(KEY_DESC, description);
+        }
     }
 
     public void saveNote(View v)
     {
+
         String title = editTextTitle.getText().toString();
-        String description = editTextDescription.getText().toString();
-        String manufacturer = editTextManufacturer.getText().toString();
-        String link = editTextLink.getText().toString();
-        Double price = Double.parseDouble(editTextPrice.getText().toString());
-        String type = editTextType.getText().toString();
+        if(title != null)
+        {
+            noteRef = db.document("Component/"+title);
+            String description = editTextDescription.getText().toString();
+            String manufacturer = editTextManufacturer.getText().toString();
+            String link = editTextLink.getText().toString();
+            Double price = Double.parseDouble(editTextPrice.getText().toString());
+            String type = editTextType.getText().toString();
 
 
-        Map<String, Object> note = new HashMap<>();
-        note.put(KEY_DESC, description);
-        note.put(KEY_LINK, link);
-        note.put(KEY_MANU, manufacturer);
-        note.put(KEY_TITLE, title);
-        note.put(KEY_PRICE, price);
-        note.put(KEY_TYPE, type);
+            Map<String, Object> note = new HashMap<>();
+            note.put(KEY_DESC, description);
+            note.put(KEY_LINK, link);
+            note.put(KEY_MANU, manufacturer);
+            note.put(KEY_TITLE, title);
+            note.put(KEY_PRICE, price);
+            note.put(KEY_TYPE, type);
 
 //        noteRef.set(note)
 //                .addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -217,56 +227,59 @@ public class GalleryFragment extends Fragment {
 //                        Log.d(TAG, e.toString());
 //                    }
 //                });
-        componentRef.add(note);
+            componentRef.document(title).set(note);
+        }
+
     }
 
     public void loadNote(View v) {
-//        noteRef.get()
-//                .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-//                    @Override
-//                    public void onSuccess(DocumentSnapshot documentSnapshot) {
-//                        if(documentSnapshot.exists()){
-//                            String title = documentSnapshot.getString(KEY_TITLE);
-//                            String description = documentSnapshot.getString(KEY_DESC);
-//                            String manufacturer = documentSnapshot.getString(KEY_MANU);
-//                            String link = documentSnapshot.getString(KEY_LINK);
-//                            Double price = documentSnapshot.getDouble(KEY_PRICE);
-//                            String type = documentSnapshot.getString(KEY_TYPE);
-//
-//                            //Map<String, Object> note = documentSnapshot.getData();
-//
-//                            textViewData.setText("Name: " +title+ "\n" +"Description: "+description+ "\n" +"Manufacturer: "+manufacturer+"\n" +"Link: "+link+ "\n" +"Price : "+price+ "\n" +"ProductType: "+type );
-//                        } else {
-//                            Toast.makeText(getActivity(), "Document does not exist", Toast.LENGTH_SHORT).show();
-//                        }
-//                    }
-//                })
-//                .addOnFailureListener(new OnFailureListener() {
-//                    @Override
-//                    public void onFailure(@NonNull Exception e) {
-//                        Toast.makeText(getActivity(), "Error!", Toast.LENGTH_SHORT).show();
-//                        Log.d(TAG, e.toString());
-//                    }
-//                });
-//    }
-        componentRef.get()
-                .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+        noteRef = db.document("Component/"+editTextTitle.getText().toString());
+        noteRef.get()
+                .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                     @Override
-                    public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-                        String data ="";
-                        for(QueryDocumentSnapshot documentSnapshot: queryDocumentSnapshots)
-                        {
+                    public void onSuccess(DocumentSnapshot documentSnapshot) {
+                        if(documentSnapshot.exists()){
                             String title = documentSnapshot.getString(KEY_TITLE);
-                          String description = documentSnapshot.getString(KEY_DESC);
-                          String manufacturer = documentSnapshot.getString(KEY_MANU);
-                          String link = documentSnapshot.getString(KEY_LINK);
-                          Double price = documentSnapshot.getDouble(KEY_PRICE);
-                          String type = documentSnapshot.getString(KEY_TYPE);
-                          data += "Name: " +title+ "\n" +"Description: "+description+ "\n" +"Manufacturer: "+manufacturer+"\n" +"Link: "+link+ "\n" +"Price : "+price+ "\n" +"ProductType: "+type + "\n\n";
-                        }
+                            String description = documentSnapshot.getString(KEY_DESC);
+                            String manufacturer = documentSnapshot.getString(KEY_MANU);
+                            String link = documentSnapshot.getString(KEY_LINK);
+                            Double price = documentSnapshot.getDouble(KEY_PRICE);
+                            String type = documentSnapshot.getString(KEY_TYPE);
 
-                        textViewData.setText(data);
+                            //Map<String, Object> note = documentSnapshot.getData();
+
+                            textViewData.setText("Name: " +title+ "\n" +"Description: "+description+ "\n" +"Manufacturer: "+manufacturer+"\n" +"Link: "+link+ "\n" +"Price : "+price+ "\n" +"ProductType: "+type );
+                        } else {
+                            Toast.makeText(getActivity(), "Document does not exist", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(getActivity(), "Error!", Toast.LENGTH_SHORT).show();
+                        Log.d(TAG, e.toString());
                     }
                 });
     }
+//        componentRef.get()
+//                .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+//                    @Override
+//                    public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+//                        String data ="";
+//                        for(QueryDocumentSnapshot documentSnapshot: queryDocumentSnapshots)
+//                        {
+//                            String title = documentSnapshot.getString(KEY_TITLE);
+//                          String description = documentSnapshot.getString(KEY_DESC);
+//                          String manufacturer = documentSnapshot.getString(KEY_MANU);
+//                          String link = documentSnapshot.getString(KEY_LINK);
+//                          Double price = documentSnapshot.getDouble(KEY_PRICE);
+//                          String type = documentSnapshot.getString(KEY_TYPE);
+//                          data += "Name: " +title+ "\n" +"Description: "+description+ "\n" +"Manufacturer: "+manufacturer+"\n" +"Link: "+link+ "\n" +"Price : "+price+ "\n" +"ProductType: "+type + "\n\n";
+//                        }
+//
+//                        textViewData.setText(data);
+//                    }
+//                });
+//    }
 }
