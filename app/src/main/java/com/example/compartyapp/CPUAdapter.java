@@ -56,6 +56,7 @@ public class CPUAdapter extends RecyclerView.Adapter<com.example.compartyapp.CPU
                 intent.putExtra("BaseClock",cpus.get(holder.getAdapterPosition()).getBaseClock());
                 intent.putExtra("BoostClock",cpus.get(holder.getAdapterPosition()).getBoostClock());
                 intent.putExtra("Link",cpus.get(holder.getAdapterPosition()).getLink());
+                intent.putExtra("Name",cpus.get(holder.getAdapterPosition()).getName());
                 cpuContext.startActivity(intent);
             }
         });

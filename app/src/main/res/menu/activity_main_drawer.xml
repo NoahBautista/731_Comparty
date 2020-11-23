@@ -13,6 +13,11 @@
             android:icon="@drawable/ic_build"
             android:title="@string/menu_gallery" />
 
+        <item
+            android:id="@+id/nav_slideshow"
+            android:icon="@drawable/ic_add"
+            android:title="@string/addition"/>
+
 <!--        <item-->
 <!--            android:id="@+id/nav_cpu"-->
 <!--            android:icon="@drawable/ic_cpu"-->

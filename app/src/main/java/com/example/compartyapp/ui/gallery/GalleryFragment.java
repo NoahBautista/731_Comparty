@@ -56,7 +56,7 @@ public class GalleryFragment extends Fragment {
 
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private CollectionReference componentRef = db.collection("Component");
-    private DocumentReference noteRef = db.document("Component/Intel i7 8700k");
+    private DocumentReference noteRef = db.document("Component/Default");
     private ListenerRegistration componentListner;
 
 
@@ -77,8 +77,8 @@ public class GalleryFragment extends Fragment {
         Button b1 = (Button) root.findViewById(R.id.button_save);
         b1.setOnClickListener(buttonSave);
 
-        Button b2 = (Button) root.findViewById(R.id.button_load);
-        b2.setOnClickListener(buttonLoad);
+        //Button b2 = (Button) root.findViewById(R.id.button_load);
+        // b2.setOnClickListener(buttonLoad);
 
         Button b3 = (Button) root.findViewById(R.id.button_update);
         b3.setOnClickListener(buttonUpdate);
@@ -193,6 +193,7 @@ public class GalleryFragment extends Fragment {
         String link = editTextLink.getText().toString();
         Double price = Double.parseDouble(editTextPrice.getText().toString());
         String type = editTextType.getText().toString();
+
 
         Map<String, Object> note = new HashMap<>();
         note.put(KEY_DESC, description);

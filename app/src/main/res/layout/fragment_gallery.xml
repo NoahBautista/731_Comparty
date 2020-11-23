@@ -7,6 +7,7 @@
     android:orientation="vertical"
     android:padding="16dp"
     android:background="#373737"
+    android:id="@+id/fragment_container"
     tools:context=".ui.gallery.GalleryFragment">
 
     <EditText
@@ -81,11 +82,13 @@
         android:layout_height="wrap_content"
         android:text="Save"/>
 
-    <Button
+ <!--   <Button
         android:id="@+id/button_load"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Load"/>
+        android:text="Load"
+        android:visibility="invisible"/>
+        -->
 
     <Button
         android:id="@+id/button_update"
@@ -108,7 +111,8 @@
         android:layout_height="wrap_content"
         android:textColor="#FFFFFF"
         android:textSize="14sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:visibility="invisible"/>
 </androidx.core.widget.NestedScrollView>
     // *** input types allows for single line only input
 </LinearLayout>

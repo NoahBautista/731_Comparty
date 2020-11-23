@@ -18,6 +18,7 @@ public class ViewCPU extends AppCompatActivity {
     TextView cpuBaseClock;
     TextView cpuBoostClock;
     TextView cpuLink;
+    TextView cpuName;
 
     String cpuWebURL;
 
@@ -35,6 +36,7 @@ public class ViewCPU extends AppCompatActivity {
         cpuBaseClock = (TextView) findViewById(R.id.textBaseClock);
         cpuBoostClock = (TextView) findViewById(R.id.textBoostClock);
         cpuLink = (TextView) findViewById(R.id.textLink);
+        cpuName = (TextView) findViewById(R.id.textName);
 
         Bundle cpuBundle = getIntent().getExtras();
         if(cpuBundle != null){
@@ -45,6 +47,8 @@ public class ViewCPU extends AppCompatActivity {
             cpuBaseClock.setText(cpuBundle.getString("BaseClock"));
             cpuBoostClock.setText(cpuBundle.getString("BoostClock"));
             cpuWebURL = cpuBundle.getString("Link");
+            // Added
+            cpuName.setText(cpuBundle.getString("Name"));
         }
 
         Button cpuWebView = findViewById(R.id.cpuWebview);
@@ -59,5 +63,7 @@ public class ViewCPU extends AppCompatActivity {
             }
         });
 
+
+        //Make button to add values in here for Firebase via button
     }
 }
