@@ -48,7 +48,7 @@ public class PartsAdapter extends FirestoreRecyclerAdapter <Parts, PartsAdapter.
                 intent.putExtra("Manufacturer", model.getManufacturer());
                 intent.putExtra("Price", model.getPrice());
                 intent.putExtra("Link", model.getLink());
-                intent.putExtra("ProductType", model.getType());
+                //intent.putExtra("ProductType", model.getType());
 
                 partsContext.startActivity(intent);
             }

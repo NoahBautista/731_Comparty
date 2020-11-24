@@ -29,7 +29,7 @@ public class PartsView extends AppCompatActivity {
         //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         partsDescription = (TextView) findViewById(R.id.textDescriptionP);
-        partsProductType = (TextView) findViewById(R.id.textProductType);
+        //partsProductType = (TextView) findViewById(R.id.textProductType);
         partsManufacturer = (TextView) findViewById(R.id.textManufacturer);
         partsPrice = (TextView) findViewById(R.id.textPrice);
         partsLink = (TextView) findViewById(R.id.textLinkP);
@@ -40,24 +40,24 @@ public class PartsView extends AppCompatActivity {
             partsDescription.setText(partsBundle.getString("Description"));
             partsPrice.setText(String.valueOf(partsBundle.getDouble("Price")));
             partsManufacturer.setText(partsBundle.getString("Manufacturer"));
-            partsProductType.setText(partsBundle.getString("ProductType"));
+            //partsProductType.setText(partsBundle.getString("ProductType"));
             partsWebURL = partsBundle.getString("Link");
             // Added
             partsName.setText(partsBundle.getString("NameP"));
         }
 
 
-//        Button partsWebView = findViewById(R.id.partsWebView);
-//        partsWebView.setOnClickListener(new View.OnClickListener()
-//        {
-//            @Override
-//            public void onClick(View view)
-//            {
-//                Intent intent = new Intent(com.example.compartyapp.ViewCPU.this,CPUWebView.class);
-//                intent.putExtra("LINK",cpuWebURL);
-//                startActivity(intent);
-//            }
-//        });
+        Button partsWebView = findViewById(R.id.partsWebView);
+        partsWebView.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                Intent intent = new Intent(com.example.compartyapp.PartsView.this,PartsWebView.class);
+                intent.putExtra("LINK",partsWebURL);
+                startActivity(intent);
+            }
+        });
 
     }
 }

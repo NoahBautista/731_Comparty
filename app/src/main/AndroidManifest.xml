@@ -16,7 +16,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CompartyApp">
-        <activity android:name=".PartsView"></activity>
+        <activity android:name=".PartsWebView"></activity>
+        <activity android:name=".PartsView" />
         <activity android:name=".CasesWebView" />
         <activity
             android:name=".ViewCases"

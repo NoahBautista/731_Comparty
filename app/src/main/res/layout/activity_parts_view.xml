@@ -47,24 +47,24 @@
             android:text="manufacturer"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"></TextView>
 
-        <TextView
-            android:layout_marginTop="50dp"
-            android:id="@+id/partsProductType"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Product Type:"
-            android:layout_below="@+id/partsManufacturer"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"></TextView>
-        <TextView
-            android:layout_marginTop="50dp"
-            android:id="@+id/textProductType"
-            android:layout_marginLeft="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/partsProductType"
-            android:layout_below="@+id/partsManufacturer"
-            android:text="productType"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"></TextView>
+<!--        <TextView-->
+<!--            android:layout_marginTop="50dp"-->
+<!--            android:id="@+id/partsProductType"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Product Type:"-->
+<!--            android:layout_below="@+id/partsManufacturer"-->
+<!--            android:textAppearance="@style/TextAppearance.AppCompat.Large"></TextView>-->
+<!--        <TextView-->
+<!--            android:layout_marginTop="50dp"-->
+<!--            android:id="@+id/textProductType"-->
+<!--            android:layout_marginLeft="10dp"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_toRightOf="@id/partsProductType"-->
+<!--            android:layout_below="@+id/partsManufacturer"-->
+<!--            android:text="productType"-->
+<!--            android:textAppearance="@style/TextAppearance.AppCompat.Large"></TextView>-->
 
         <TextView
             android:layout_marginTop="50dp"
@@ -88,7 +88,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Price:"
-            android:layout_below="@+id/partsProductType"
+            android:layout_below="@+id/partsManufacturer"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"></TextView>
         <TextView
             android:layout_marginTop="50dp"
@@ -97,10 +97,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/partsPrice"
-            android:layout_below="@+id/partsProductType"
+            android:layout_below="@+id/partsManufacturer"
             android:text="price"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"></TextView>
-
         <Button
             android:id="@+id/partsWebView"
             android:layout_width="200dp"
