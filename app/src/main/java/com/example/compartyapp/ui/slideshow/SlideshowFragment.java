@@ -57,7 +57,8 @@ public class SlideshowFragment extends Fragment {
         FirestoreRecyclerOptions<Parts> parts = new FirestoreRecyclerOptions.Builder<Parts>()
                 .setQuery(query, Parts.class)
                 .build();
-        adapter = new PartsAdapter(parts);
+        //need to get the context of the fragment
+        adapter = new PartsAdapter(parts,getContext());
 
         RecyclerView recyclerView = root.findViewById(R.id.firebase_list);
         recyclerView.setHasFixedSize(true);
