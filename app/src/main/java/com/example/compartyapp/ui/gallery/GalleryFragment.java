@@ -187,7 +187,16 @@ public class GalleryFragment extends Fragment {
             // Map<String, Object> note = new HashMap<>();
             // note.put(KEY_DESC, description);
             //noteRef = db.document("Component/"+KEY_TITLE);
+            String manufacturer = editTextManufacturer.getText().toString();
+            String link = editTextLink.getText().toString();
+            String type = editTextType.getText().toString();
+            Double price = Double.parseDouble(editTextPrice.getText().toString());
+
             noteRef.update(KEY_DESC, description);
+            noteRef.update(KEY_MANU, manufacturer);
+            noteRef.update(KEY_LINK, link);
+            noteRef.update(KEY_TYPE, type);
+            noteRef.update(KEY_PRICE, price);
         }
     }
 

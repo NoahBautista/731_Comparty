@@ -94,7 +94,7 @@
         android:id="@+id/button_update"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Update Description"/>
+        android:text="Update"/>
 
     <Button
         android:id="@+id/button_delete"
