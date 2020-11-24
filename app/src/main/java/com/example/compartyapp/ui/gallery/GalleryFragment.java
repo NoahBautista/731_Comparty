@@ -77,8 +77,8 @@ public class GalleryFragment extends Fragment {
         Button b1 = (Button) root.findViewById(R.id.button_save);
         b1.setOnClickListener(buttonSave);
 
-        Button b2 = (Button) root.findViewById(R.id.button_load);
-        b2.setOnClickListener(buttonLoad);
+//        Button b2 = (Button) root.findViewById(R.id.button_load);
+//        b2.setOnClickListener(buttonLoad);
 
         Button b3 = (Button) root.findViewById(R.id.button_update);
         b3.setOnClickListener(buttonUpdate);
@@ -147,10 +147,10 @@ public class GalleryFragment extends Fragment {
 
     private View.OnClickListener buttonSave = new View.OnClickListener() {
         public void onClick(View v) {
-            if(editTextTitle == null || editTextDescription == null || editTextManufacturer == null  || editTextLink == null  || editTextPrice == null || editTextType == null  ){
-                Toast.makeText(getActivity(), "Please insert data into all fields.", Toast.LENGTH_SHORT).show();
-                return;
-            }
+//            if(editTextTitle == null || editTextDescription == null || editTextManufacturer == null  || editTextLink == null  || editTextPrice == null || editTextType == null  ){
+//                Toast.makeText(getActivity(), "Please insert data into all fields.", Toast.LENGTH_SHORT).show();
+//                return;
+//            }
             saveNote(v);
         }
     };
@@ -174,29 +174,41 @@ public class GalleryFragment extends Fragment {
     };
 
     private void deleteNote(View v) {
-        if(editTextTitle.getText().toString() != null){
-            noteRef = db.document("Component/"+editTextTitle.getText().toString());
-            noteRef.delete();
+        try {
+            if (editTextTitle.getText().toString() != null) {
+                noteRef = db.document("Component/" + editTextTitle.getText().toString());
+                noteRef.delete();
+                Toast.makeText(getActivity(), "Component Deleted", Toast.LENGTH_SHORT).show();
+            }
+        }
+        catch (IllegalArgumentException exception){
+            Toast.makeText(getActivity(), "Input a valid component name present in the build section.", Toast.LENGTH_LONG).show();
         }
     }
 
     public void updateNote(View v) {
-        if(editTextTitle.getText().toString() != null){
-            noteRef = db.document("Component/"+editTextTitle.getText().toString());
-            String description = editTextDescription.getText().toString();
-            // Map<String, Object> note = new HashMap<>();
-            // note.put(KEY_DESC, description);
-            //noteRef = db.document("Component/"+KEY_TITLE);
-            String manufacturer = editTextManufacturer.getText().toString();
-            String link = editTextLink.getText().toString();
-            String type = editTextType.getText().toString();
-            Double price = Double.parseDouble(editTextPrice.getText().toString());
+        try {
+            if (editTextTitle.getText().toString() != null) {
+                noteRef = db.document("Component/" + editTextTitle.getText().toString());
+                String description = editTextDescription.getText().toString();
+                // Map<String, Object> note = new HashMap<>();
+                // note.put(KEY_DESC, description);
+                //noteRef = db.document("Component/"+KEY_TITLE);
+                String manufacturer = editTextManufacturer.getText().toString();
+                String link = editTextLink.getText().toString();
+                String type = editTextType.getText().toString();
+                Double price = Double.parseDouble(editTextPrice.getText().toString());
 
-            noteRef.update(KEY_DESC, description);
-            noteRef.update(KEY_MANU, manufacturer);
-            noteRef.update(KEY_LINK, link);
-            noteRef.update(KEY_TYPE, type);
-            noteRef.update(KEY_PRICE, price);
+                noteRef.update(KEY_DESC, description);
+                noteRef.update(KEY_MANU, manufacturer);
+                noteRef.update(KEY_LINK, link);
+                noteRef.update(KEY_TYPE, type);
+                noteRef.update(KEY_PRICE, price);
+                Toast.makeText(getActivity(), "Component Updated", Toast.LENGTH_SHORT).show();
+            }
+        }
+        catch (IllegalArgumentException exception){
+            Toast.makeText(getActivity(), "Input a valid component name present in the build section.", Toast.LENGTH_LONG).show();
         }
     }
 
@@ -204,8 +216,7 @@ public class GalleryFragment extends Fragment {
     {
 
         String title = editTextTitle.getText().toString();
-        if(title != null)
-        {
+        try{
             noteRef = db.document("Component/"+title);
             String description = editTextDescription.getText().toString();
             String manufacturer = editTextManufacturer.getText().toString();
@@ -213,14 +224,20 @@ public class GalleryFragment extends Fragment {
             Double price = Double.parseDouble(editTextPrice.getText().toString());
             String type = editTextType.getText().toString();
 
-
-            Map<String, Object> note = new HashMap<>();
-            note.put(KEY_DESC, description);
-            note.put(KEY_LINK, link);
-            note.put(KEY_MANU, manufacturer);
-            note.put(KEY_TITLE, title);
-            note.put(KEY_PRICE, price);
-            note.put(KEY_TYPE, type);
+            if(editTextTitle == null || editTextDescription == null || editTextManufacturer == null  || editTextLink == null  || editTextPrice == null || editTextType == null  ){
+                Toast.makeText(getActivity(), "Please valid data into all fields.", Toast.LENGTH_SHORT).show();
+            }
+            else{
+                Map<String, Object> note = new HashMap<>();
+                note.put(KEY_DESC, description);
+                note.put(KEY_LINK, link);
+                note.put(KEY_MANU, manufacturer);
+                note.put(KEY_TITLE, title);
+                note.put(KEY_PRICE, price);
+                note.put(KEY_TYPE, type);
+                componentRef.document(title).set(note);
+                Toast.makeText(getActivity(), "Component Added.", Toast.LENGTH_SHORT).show();
+            }
 
 //        noteRef.set(note)
 //                .addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -236,9 +253,11 @@ public class GalleryFragment extends Fragment {
 //                        Log.d(TAG, e.toString());
 //                    }
 //                });
-            componentRef.document(title).set(note);
-        }
 
+        }
+        catch (IllegalArgumentException exception){
+            Toast.makeText(getActivity(), "Please insert data into all fields.", Toast.LENGTH_SHORT).show();
+        }
     }
 
     public void loadNote(View v) {

@@ -11,13 +11,13 @@ public class Parts {
 
     private Parts() {}
 
-    private Parts(String description, String link, String manufacturer, String name, String type, double price) {
+    private Parts(String description, String link, String manufacturer, String name, double price, String type) {
         this.description = description;
         this.link = link;
         this.manufacturer = manufacturer;
         this.name = name;
-        this.type = type;
         this.price = price;
+        this.type = type;
     }
 
     public String getDescription() {
@@ -32,10 +32,6 @@ public class Parts {
         return name;
     }
 
-    public String getType() {
-        return type;
-    }
-
     public double getPrice() {
         return price;
     }
@@ -43,5 +39,14 @@ public class Parts {
     public String getManufacturer() {
         return manufacturer;
     }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String t1) {
+        this.type = t1;
+    }
+
 
 }

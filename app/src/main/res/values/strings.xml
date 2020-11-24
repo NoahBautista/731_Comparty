@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">CompartyApp</string>
+    <string name="app_name">Comparty</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">COMPARTY</string>
@@ -9,7 +9,7 @@
 
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Build</string>
-    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_slideshow">Add to Build</string>
 
     <string name="motherboard">Motherboard</string>
     <string name="cases">Cases</string>

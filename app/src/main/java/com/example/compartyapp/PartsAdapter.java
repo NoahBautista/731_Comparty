@@ -3,10 +3,12 @@ package com.example.compartyapp;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -14,6 +16,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class PartsAdapter extends FirestoreRecyclerAdapter <Parts, PartsAdapter.PartsHolder>{
 
@@ -42,15 +49,43 @@ public class PartsAdapter extends FirestoreRecyclerAdapter <Parts, PartsAdapter.
 //                intent.putExtra("BoostClock",cpus.get(holder.getAdapterPosition()).getBoostClock());
 //                intent.putExtra("Link",cpus.get(holder.getAdapterPosition()).getLink());
 //                intent.putExtra("Name",cpus.get(holder.getAdapterPosition()).getName());
+                if(model.getType() == null) {
+                    FirebaseFirestore db = FirebaseFirestore.getInstance();
+                    DocumentReference noteRef = db.document("Component/"+model.getName());
 
-                intent.putExtra("NameP", model.getName());
-                intent.putExtra("Description", model.getDescription());
-                intent.putExtra("Manufacturer", model.getManufacturer());
-                intent.putExtra("Price", model.getPrice());
-                intent.putExtra("Link", model.getLink());
-                //intent.putExtra("ProductType", model.getType());
+                    noteRef.get()
+                            .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                                @Override
+                                public void onSuccess(DocumentSnapshot documentSnapshot) {
+                                    if (documentSnapshot.exists()) {
+                                        String title = documentSnapshot.getString("productType");
+                                        model.setType(title);
+                                        //Log.i("PartsAdapter", "Value: " + title);
+                                        intent.putExtra("NameP", model.getName());
+                                        intent.putExtra("Description", model.getDescription());
+                                        intent.putExtra("Manufacturer", model.getManufacturer());
+                                        intent.putExtra("Price", model.getPrice());
+                                        intent.putExtra("Product", title);
+                                        //Log.i("PartsAdapter1", "Value: "+model.getType());
+                                        intent.putExtra("Link", model.getLink());
 
-                partsContext.startActivity(intent);
+                                        partsContext.startActivity(intent);
+                                    }
+                                }
+                            });
+                }
+
+                else{
+                    // Never reaches here
+                    intent.putExtra("NameP", model.getName());
+                    intent.putExtra("Description", model.getDescription());
+                    intent.putExtra("Manufacturer", model.getManufacturer());
+                    intent.putExtra("Price", model.getPrice());
+                    intent.putExtra("Product", model.getType());
+                    //Log.i("PartsAdapter2", "Value: "+model.getType());
+                    intent.putExtra("Link", model.getLink());
+                    partsContext.startActivity(intent);
+                }
             }
         });
 

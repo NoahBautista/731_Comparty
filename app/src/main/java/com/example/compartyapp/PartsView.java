@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -29,7 +30,7 @@ public class PartsView extends AppCompatActivity {
         //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         partsDescription = (TextView) findViewById(R.id.textDescriptionP);
-        //partsProductType = (TextView) findViewById(R.id.textProductType);
+        partsProductType = (TextView) findViewById(R.id.textProductType);
         partsManufacturer = (TextView) findViewById(R.id.textManufacturer);
         partsPrice = (TextView) findViewById(R.id.textPrice);
         partsLink = (TextView) findViewById(R.id.textLinkP);
@@ -40,7 +41,7 @@ public class PartsView extends AppCompatActivity {
             partsDescription.setText(partsBundle.getString("Description"));
             partsPrice.setText(String.valueOf(partsBundle.getDouble("Price")));
             partsManufacturer.setText(partsBundle.getString("Manufacturer"));
-            //partsProductType.setText(partsBundle.getString("ProductType"));
+            partsProductType.setText(partsBundle.getString("Product"));
             partsWebURL = partsBundle.getString("Link");
             // Added
             partsName.setText(partsBundle.getString("NameP"));

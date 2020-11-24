@@ -3,6 +3,7 @@ package com.example.compartyapp.ui.slideshow;
 import android.app.Application;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,8 +35,12 @@ import com.example.compartyapp.PartsAdapter;
 import com.example.compartyapp.R;
 import com.example.compartyapp.ui.gallery.GalleryFragment;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 
@@ -53,7 +58,8 @@ public class SlideshowFragment extends Fragment {
         slideshowViewModel =
                 new ViewModelProvider(this).get(SlideshowViewModel.class);
         View root = inflater.inflate(R.layout.fragment_slideshow, container, false);
-        Query query = partsRef.orderBy("name", Query.Direction.ASCENDING);
+        Query query = partsRef.orderBy("productType", Query.Direction.ASCENDING);
+//        Query query = partsRef.orderBy("name", Query.Direction.ASCENDING);
         FirestoreRecyclerOptions<Parts> parts = new FirestoreRecyclerOptions.Builder<Parts>()
                 .setQuery(query, Parts.class)
                 .build();
@@ -65,23 +71,7 @@ public class SlideshowFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setAdapter(adapter);
 
-//        FloatingActionButton addon = root.findViewById(R.id.button_addition);
-//        addon.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Fragment fragment = new GalleryFragment();
-//                replaceFragment(fragment);
-//            }
-//        });
         return root;
-    }
-
-
-    public void replaceFragment(Fragment someFragment) {
-        FragmentTransaction transaction = getFragmentManager().beginTransaction();
-        transaction.replace(R.id.fragmentSlideshow, someFragment);
-        transaction.addToBackStack(null);
-        transaction.commit();
     }
 
     @Override

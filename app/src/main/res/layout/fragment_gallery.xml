@@ -80,15 +80,15 @@
         android:id="@+id/button_save"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Save"/>
+        android:text="Add"/>
 
-    <Button
+ <!--   <Button
         android:id="@+id/button_load"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Load"
         android:visibility="visible"/>
-
+-->
 
     <Button
         android:id="@+id/button_update"

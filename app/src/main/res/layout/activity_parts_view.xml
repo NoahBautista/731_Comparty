@@ -4,128 +4,159 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".PartsView">
 
-    <RelativeLayout
+    <TableRow
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="8dp">
+        android:layout_marginTop="40dp">
 
         <TextView
             android:id="@+id/partsDescription"
-            android:layout_marginTop="50dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/partsName"
+            android:layout_marginLeft="5dp"
             android:text="Description:"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"></TextView>
-        <TextView
-            android:id="@+id/textDescriptionP"
-            android:maxLines="5"
-            android:layout_marginLeft="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/partsDescription"
-            android:text="Description"></TextView>
 
         <TextView
-            android:layout_marginTop="100dp"
+            android:id="@+id/textDescriptionP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/partsDescription"
+            android:layout_gravity="fill"
+            android:layout_marginLeft="10dp"
+            android:maxLines="10"
+            android:text="Description"
+            android:textSize="14sp"></TextView>
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
             android:id="@+id/partsManufacturer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Manufacturer:"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="5dp"
             android:layout_below="@+id/partsDescription"
+            android:text="Manufacturer:"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"></TextView>
+
         <TextView
-            android:layout_marginTop="100dp"
             android:id="@+id/textManufacturer"
-            android:layout_marginLeft="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/partsManufacturer"
             android:layout_below="@+id/partsDescription"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="30dp"
+            android:layout_toRightOf="@id/partsManufacturer"
             android:text="manufacturer"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"></TextView>
+            android:textSize="18sp"></TextView>
+    </TableRow>
 
-<!--        <TextView-->
-<!--            android:layout_marginTop="50dp"-->
-<!--            android:id="@+id/partsProductType"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="Product Type:"-->
-<!--            android:layout_below="@+id/partsManufacturer"-->
-<!--            android:textAppearance="@style/TextAppearance.AppCompat.Large"></TextView>-->
-<!--        <TextView-->
-<!--            android:layout_marginTop="50dp"-->
-<!--            android:id="@+id/textProductType"-->
-<!--            android:layout_marginLeft="10dp"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_toRightOf="@id/partsProductType"-->
-<!--            android:layout_below="@+id/partsManufacturer"-->
-<!--            android:text="productType"-->
-<!--            android:textAppearance="@style/TextAppearance.AppCompat.Large"></TextView>-->
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
 
         <TextView
-            android:layout_marginTop="50dp"
+            android:id="@+id/partsProductType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/partsManufacturer"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="5dp"
+            android:text="Product Type:"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"></TextView>
+
+        <TextView
+            android:id="@+id/textProductType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/partsManufacturer"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="30dp"
+            android:layout_toRightOf="@id/partsProductType"
+            android:text="productType"
+            android:textSize="18sp"></TextView>
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
             android:id="@+id/partsName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Name of Part:"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="5dp"
+            android:text="Name:"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"></TextView>
-        <TextView
-            android:layout_marginTop="55dp"
-            android:id="@+id/textNameP"
-            android:layout_marginLeft="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/partsName"
-            android:text="name"></TextView>
 
         <TextView
-            android:layout_marginTop="50dp"
+            android:id="@+id/textNameP"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="30dp"
+            android:layout_toRightOf="@id/partsName"
+            android:text="name"
+            android:textSize="18sp"></TextView>
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
             android:id="@+id/partsPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="5dp"
+            android:layout_below="@+id/partsManufacturer"
             android:text="Price:"
-            android:layout_below="@+id/partsManufacturer"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"></TextView>
+
         <TextView
-            android:layout_marginTop="50dp"
             android:id="@+id/textPrice"
-            android:layout_marginLeft="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/partsPrice"
             android:layout_below="@+id/partsManufacturer"
-            android:text="price"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"></TextView>
-        <Button
-            android:id="@+id/partsWebView"
-            android:layout_width="200dp"
-            android:layout_height="70dp"
-            android:text="View Link of Part"
-            android:layout_below="@+id/partsPrice"
-            android:layout_marginTop="20dp">
-        </Button>
-
-        <TextView
-            android:id="@+id/textLinkP"
             android:layout_marginLeft="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:visibility="invisible">
-        </TextView>
+            android:layout_marginTop="30dp"
+            android:layout_toRightOf="@id/partsPrice"
+            android:text="price"
+            android:textSize="18sp"></TextView>
+    </TableRow>
 
-<!--        <TextView-->
-<!--            android:id="@+id/textName"-->
-<!--            android:layout_marginLeft="10dp"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:visibility="invisible">-->
-<!--        </TextView>-->
+    <Button
+        android:id="@+id/partsWebView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/partsPrice"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp"
+        android:text="View Link of Part"></Button>
 
+    <TextView
+        android:id="@+id/textLinkP"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"></TextView>
 
-    </RelativeLayout>
+    <!--        <TextView-->
+    <!--            android:id="@+id/textName"-->
+    <!--            android:layout_marginLeft="10dp"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:visibility="invisible">-->
+    <!--        </TextView>-->
+
 
 </LinearLayout>
