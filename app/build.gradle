@@ -26,6 +26,13 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+        }
+    }
+
 }
 
 apply plugin: 'com.android.application'
@@ -70,5 +77,8 @@ dependencies {
     implementation 'com.firebaseui:firebase-ui-firestore:6.2.1'
 
     implementation 'com.android.support:multidex:1.0.3'
+
+    //Robolectric Dependencies
+    testImplementation 'org.robolectric:robolectric:4.4'
 
 }
